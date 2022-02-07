@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-3" *ngFor="let item of movies?.results| paginate: {
+    itemsPerPage: 20,
+    currentPage: p,
+    totalItems: movies?.total_results }">
+        <div class="card card-body">
+          <div class="row">
+            <div class="col-3">
+              <span>
+                <img class="img-cover" src="{{imgUrl + item?.backdrop_path}}" alt="">
+              </span>
+            </div>
+            <div class="col">
+              {{ item?.original_title}}
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+      <pagination-controls (pageChange)="p = $event" id="first"></pagination-controls>
+    </div>
+  </div>
+</div>
