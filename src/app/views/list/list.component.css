@@ -1,0 +1,16 @@
+.img-cover {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.valoration {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.card:hover {
+    background-color: #EEE;
+}

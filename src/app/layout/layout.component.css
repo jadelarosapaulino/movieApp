@@ -1,0 +1,8 @@
+.continer-q {
+    margin-top: -200px;
+    z-index: 10000;
+}
+
+.carousel {
+    z-index: -1;
+}

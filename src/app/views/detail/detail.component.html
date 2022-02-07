@@ -1,0 +1,13 @@
+<div class="card">
+    <img [src]="imgUrl + movie?.backdrop_path" class="card-img-top detail detail" [alt]="movie?.title">
+    <div class="card-body">
+        <h5 class="card-title">{{ movie?.title }}</h5>
+        <span class="text-end">
+          {{ movie?.vote_average }} / 10 <i class="fas fa-star text-warning"></i>
+        </span>
+        <p class="card-text">
+            {{ movie?.overview}}
+        </p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+</div>
