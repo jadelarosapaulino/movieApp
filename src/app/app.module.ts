@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './services/movie.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DetailComponent } from './views/detail/detail.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DetailComponent } from './views/detail/detail.component';
     NavbarComponent,
     CarouselComponent,
     ListComponent,
-    DetailComponent
+    DetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

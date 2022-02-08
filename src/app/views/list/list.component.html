@@ -14,33 +14,49 @@
         </div>
     </div> -->
 <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12 mb-3" *ngFor="let item of mlist | paginate: { itemsPerPage: 20, currentPage: p, totalItems: movies?.total_results}" [routerLink]="['detail',item?.id]">
+  <div
+    class="col-lg-6 col-md-6 col-sm-12 mb-3"
+    *ngFor="
+      let item of mlist
+        | paginate
+          : {
+              itemsPerPage: 20,
+              currentPage: p,
+              totalItems: movies?.total_results
+            }
+    "
+    [routerLink]="['detail', item?.id]"
+  >
+    <!-- | paginate: { itemsPerPage: 20, currentPage: p, totalItems: movies?.total_results }" -->
 
-        <!-- | paginate: { itemsPerPage: 20, currentPage: p, totalItems: movies?.total_results }" -->
-
-        <div class="card card-body">
-            <div class="row">
-                <div class="col-md-3">
-                    <img class="img-cover mr-3" src="{{imgUrl + item?.backdrop_path}}" alt="">
-                </div>
-                <div class="col-md-9">
-                    <div class="col-md-12">
-                        {{ item?.original_title}}
-                    </div>
-                    <div class="col-md-12">
-                        <span class="valoration">
-                {{ item?.vote_average }} / 10 <i class="fas fa-star text-warning"></i>
-              </span>
-                    </div>
-                </div>
-            </div>
+    <div class="card card-body">
+      <div class="row">
+        <div class="col-md-3">
+          <img
+            class="img-cover mr-3"
+            src="{{ imgUrl + item?.backdrop_path }}"
+            alt=""
+          />
         </div>
+        <div class="col-md-9">
+          <div class="col-md-12">
+            {{ item?.original_title }}
+          </div>
+          <div class="col-md-12">
+            <span class="valoration text-center">
+              {{ item?.vote_average }} / 10
+              <i class="fas fa-star text-warning text-center"></i>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
-<div class="bg-light p-2 py-auto">
-    <span class="py-1">
-        <pagination-controls (pageChange)="pageChange($event)">
-        </pagination-controls>
-    </span>
+<div class="bg-light p-2 pt-3">
+  <span class="bg-danger text-center">
+    <pagination-controls (pageChange)="pageChange($event)">
+    </pagination-controls>
+  </span>
 </div>
